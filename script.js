@@ -1,21 +1,3 @@
-window.addEventListener("load", function () {
-    const videoOverlay = document.getElementById("pageLoader");
-
-    setTimeout(() => {
-        videoOverlay.style.transition = "opacity 1s ease";
-        videoOverlay.style.opacity = "0";
-
-        setTimeout(() => {
-            videoOverlay.style.display = "none";
-            document.body.style.overflowY = "auto";
-            document.documentElement.style.overflowY = "auto";
-            document.body.style.overflowX = "hidden";
-            document.documentElement.style.overflowX = "hidden";
-
-            document.body.classList.add("loaded");
-        }, 1000);
-    }, 3000);
-});
 
 //FADE SCROLL
 const items = document.querySelectorAll('.fade-item');
