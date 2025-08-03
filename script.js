@@ -1,3 +1,21 @@
+window.addEventListener("load", function () {
+    const videoOverlay = document.getElementById("pageLoader");
+
+    setTimeout(() => {
+        videoOverlay.style.transition = "opacity 1s ease";
+        videoOverlay.style.opacity = "0";
+
+        setTimeout(() => {
+            videoOverlay.style.display = "none";
+            document.body.style.overflowY = "auto";
+            document.documentElement.style.overflowY = "auto";
+            document.body.style.overflowX = "hidden";
+            document.documentElement.style.overflowX = "hidden";
+
+            document.body.classList.add("loaded");
+        }, 1000);
+    }, 3000);
+});
 
 //FADE SCROLL
 const items = document.querySelectorAll('.fade-item');
@@ -27,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const background = document.querySelector('.websitebackground');
 
     const images = [
-        'img/backgrounds/mainBg1.webp',
-        'img/backgrounds/mainBg2.webp',
-        'img/backgrounds/mainBg3.webp',
-        'img/backgrounds/mainBg4.webp',
-        'img/backgrounds/mainBg5.webp',
+        '/img/backgrounds/mainBg1.webp',
+        '/img/backgrounds/mainBg2.webp',
+        '/img/backgrounds/mainBg3.webp',
+        '/img/backgrounds/mainBg4.webp',
+        '/img/backgrounds/mainBg5.webp',
     ];
 
     let index = 0;
