@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const background = document.querySelector('.websitebackground');
 
     const images = [
-        '/img/backgrounds/mainBg1.webp',
-        '/img/backgrounds/mainBg2.webp',
-        '/img/backgrounds/mainBg3.webp',
-        '/img/backgrounds/mainBg4.webp',
-        '/img/backgrounds/mainBg5.webp',
+        'img/backgrounds/mainBg1.webp',
+        'img/backgrounds/mainBg2.webp',
+        'img/backgrounds/mainBg3.webp',
+        'img/backgrounds/mainBg4.webp',
+        'img/backgrounds/mainBg5.webp',
     ];
 
     let index = 0;
