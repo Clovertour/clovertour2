@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Jockey+One&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon/32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon/16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/favicon/180x180.png">
+
+    <title>Clovertour</title>
+</head>
+
+<body>
+    <!--Page Loader-->
+    <div id="pageLoader" class="page-loader">
+        <video id="pageLoaderVideo" autoplay muted playsinline>
+            <source src="/video/logo.mp4" type="video/mp4">
+        </video>
+        <p class="loader-message" data-i18n="loader_message">Welcome to Clovertour!</p>
+    </div>
+
+    <!--Background-->
+    <div class="websitebackground"></div>
+
+    <!-- Header -->
+    <header class="smartheader">
+        <a href="#" class="sh-logo" data-i18n="header_logo">Clovertour</a>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="sh-menu" id="nav-menu">
+            <a href="#" data-i18n="menu_tours">Tours</a>
+            <a href="#" data-i18n="menu_about">About</a>
+            <a href="#" data-i18n="menu_gallery">Gallery</a>
+            <a href="#" id="contact-btn" data-i18n="menu_contact">Contact</a>
+            <div class="lang-menu">
+                <div id="lang-toggle">EN</div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Contacts Modal Window-->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title" data-i18n="modal_title1">Contact Us</h2>
+            <form id="contact-form" class="modal-form" action="https://formspree.io/f/mzzgjlll" method="POST"
+                onsubmit="handleSubmit(event)">
+                <input name="name" placeholder="Full Name" type="text" required
+                    data-i18n-placeholder="placeholder_name" />
+                <input name="email" placeholder="Email" type="email" required
+                    data-i18n-placeholder="placeholder_email" />
+                <textarea name="message" placeholder="Your Message" required
+                    data-i18n-placeholder="placeholder_message"></textarea>
+                <button type="submit" data-i18n="submit">Send</button>
+
+                <div class="modal-title2" data-i18n="modal_title2">You can find us:</div>
+                <div class="modal-links">
+                    <a href="https://www.facebook.com/clovertour" target="_blank" aria-label="Facebook">
+                        <img src="/img/icons/facebook.svg" alt="Facebook" />
+                    </a>
+                    <a href="https://www.instagram.com/clovertour" target="_blank" aria-label="Instagram">
+                        <img src="/img/icons/instagram.svg" alt="Instagram" />
+                    </a>
+                    <a href="https://www.twitter.com/clovertour" target="_blank" aria-label="Twitter">
+                        <img src="/img/icons/x.svg" alt="Twitter" />
+                    </a>
+                </div>
+            </form>
+            <div id="thank-you" class="thank-you-message" style="display:none;" data-i18n="thank_you_message">
+                Thank you for contacting us!
+            </div>
+            <span class="close-btn">&times;</span>
+        </div>
+    </div>
+
+    <!-- Container 1 -->
+    <div class="container1" id="cont1Txt">
+        <div class="container1-content fade-item">
+            <div class="text-line text-left" data-i18n="cont1_title">YOUR JOURNEY BEGINS HERE</div>
+            <div class="text-line text-right" data-i18n="cont1_logo">CLOVERTOUR</div>
+            <div class="text-subtitle" data-i18n="cont1_subtitle">Where the wind sings ancient songs, and the land holds
+                the breath of ages</div>
+            <div class="cont1-btn">
+                <button id="exploreBtn" data-i18n="cont1_btn">Explore more</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Container 2 - MAP -->
+    <div class="container2 fade-item" id="cont2Map">
+        <div class="cont2-title" data-i18n="cont2_title">Discover your next adventure on the map</div>
+        <div class="container2-content fade-item">
+            <div class="interactionMap" id="interactionMap">
+                <img src="/img/map/ULSTER.png" class="region-image ulster" data-modal="modalUlster" alt="Ulster"
+                    data-i18n-alt="alt_ulster" />
+                <img src="/img/map/CONNAUGHT.png" class="region-image connacht" data-modal="modalConnacht"
+                    alt="Connacht" data-i18n-alt="alt_connacht" />
+                <img src="/img/map/LEINSTER.png" class="region-image leinster" data-modal="modalLeinster" alt="Leinster"
+                    data-i18n-alt="alt_leinster" />
+                <img src="/img/map/MUNSTER.png" class="region-image munster" data-modal="modalMunster" alt="Munster"
+                    data-i18n-alt="alt_munster" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалки с переводом заголовков и текста -->
+    <div id="modalMunster" class="modal">
+        <div class="modal-content munster-style">
+            <span class="close">&times;</span>
+            <h2 data-i18n="modal_munster_title">Мюнстер (Munster)</h2>
+            <p data-i18n="modal_munster_text">Южный регион Ирландии. Здесь город Корк, старинные аббатства и шикарные
+                пляжи.</p>
+        </div>
+    </div>
+
+    <div id="modalLeinster" class="modal">
+        <div class="modal-content leinster-style">
+            <span class="close">&times;</span>
+            <h2 data-i18n="modal_leinster_title">Ленстер (Leinster)</h2>
+            <p data-i18n="modal_leinster_text">Восточный регион с Дублином, замками и современной городской жизнью.</p>
+        </div>
+    </div>
+
+    <div id="modalConnacht" class="modal">
+        <div class="modal-content connacht-style">
+            <span class="close">&times;</span>
+            <h2 data-i18n="modal_connacht_title">Коннахт (Connacht)</h2>
+            <p data-i18n="modal_connacht_text">Запад Ирландии, дикую природу здесь никто не отменял. Галуэй, озёра,
+                скалы Мохер.</p>
+        </div>
+    </div>
+
+    <div id="modalUlster" class="modal">
+        <div class="modal-content ulster-style">
+            <span class="close">&times;</span>
+            <h2 data-i18n="modal_ulster_title">Ольстер (Ulster)</h2>
+            <p data-i18n="modal_ulster_text">Север страны. Тут пересекается история Ирландии и Северной Ирландии. Много
+                драмы.</p>
+        </div>
+    </div>
+
+    <!--Container 3-->
+    <div class="container3" id="cont3Tours">
+        <div class="cont3-content fade-item">
+            <div class="cont3-title" data-i18n="cont3_title">EXPLORE OUR MOST POPULAR TOURS</div>
+            <div class="cont3-switcher">
+                <span class="switch-btn" id="prevBtn" data-i18n="prev_btn">&lt;</span>
+                <span id="cardIndex">1 / 3</span>
+                <span class="switch-btn" id="nextBtn" data-i18n="next_btn">&gt;</span>
+            </div>
+            <div class="tours-layout">
+                <!-- Левая большая карточка -->
+                <div class="tour-card large fade" id="mainTourCard">
+                    <img src="/img/tours/limerick.webp" alt="Cliffs of Moher" data-i18n-alt="alt_main_tour_img"
+                        id="mainImage">
+                    <div class="info">
+                        <h3 data-i18n="main_title" id="mainTitle">Limerick</h3>
+                        <p class="price" data-i18n="main_price" id="mainPrice">€149.99</p>
+                        <p data-i18n="main_desc" id="mainDesc">See the breathtaking views along the rugged coast.</p>
+                        <p data-i18n="main_details" id="mainDetails">Includes transportation, lunch, and a guide.</p>
+                        <button class="book-btn" data-i18n="book_btn">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Правая сторона с двумя маленькими карточками -->
+                <div class="side-cards">
+                    <div class="tour-card fade" data-title="Welcome to Dublin" data-price="€89.99"
+                        data-desc="Explore the vibrant streets and rich history of Dublin."
+                        data-details="Visit Trinity College, Guinness Storehouse, and more."
+                        data-img="/img/tours/dublin.webp">
+                        <img src="/img/tours/dublin.webp" alt="Dublin" data-i18n-alt="alt_dublin">
+                        <div class="info">
+                            <h3 data-i18n="tour1_title">Dublin</h3>
+                            <p data-i18n="tour1_info">1-day tour • €89.99</p>
+                        </div>
+                    </div>
+
+                    <div class="tour-card fade" data-title="Calm Cork" data-price="€49.99"
+                        data-desc="Relax in Ireland's cultural capital with cozy streets and food markets."
+                        data-details="Includes train ride, city walk, and whiskey tasting."
+                        data-img="/img/tours/cork.webp">
+                        <img src="/img/tours/cork.webp" alt="Cork" data-i18n-alt="alt_cork">
+                        <div class="info">
+                            <h3 data-i18n="tour2_title">Cork</h3>
+                            <p data-i18n="tour2_info">1-day tour • €49.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="smartfooter">
+        <div class="footer-left">Clovertour</div>
+        <div class="footer-right">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Пользовательское соглашение</a>
+            <a href="mailto:clovertourhelp@gmail.com">clovertourhelp@gmail.com</a>
+        </div>
+    </footer>
+    <div class="footer-bottom-text">&copy; 2025 Clovertour. Все права защищены.</div>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
