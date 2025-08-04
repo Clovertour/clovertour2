@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let index = 0;
 
+    // Предзагрузка всех изображений
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+
     function changeBackground() {
         background.style.backgroundImage = `url('${images[index]}')`;
         index = (index + 1) % images.length;
@@ -62,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     changeBackground();
     setInterval(changeBackground, 10000);
 });
+
 
 //FOCUS REMOVE ON LINKS
 document.querySelectorAll('.sh-menu a').forEach(link => {
