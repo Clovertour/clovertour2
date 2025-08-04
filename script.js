@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     changeBackground();
-    setInterval(changeBackground, 10000);
+    setInterval(changeBackground, 20000);
 });
 
 
